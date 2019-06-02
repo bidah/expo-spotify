@@ -42,6 +42,10 @@ class Album extends React.Component {
 
   componentDidMount() {
     const { navigation, screenProps } = this.props;
+    this.toggleBlur();
+    navigation.navigate('ModalMoreOptions', {
+      toggleBlur: this.toggleBlur
+    });
     const { currentSongData } = screenProps;
     // const albumTitle = navigation.getParam('title', 'ALBUM NOT FOUND?!');
     const albumTitle = navigation.getParam('title', 'Extraordinary Machine');
