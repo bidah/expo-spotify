@@ -32,7 +32,7 @@ class Album extends React.Component {
       scrollY: new Animated.Value(0),
       song: null,
       title: null,
-      moreOptionsEnabled: false
+      blur: false
     };
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
@@ -94,21 +94,14 @@ class Album extends React.Component {
   }
 
   toggleBlur() {
-    this.setState(({ moreOptionsEnabled }) => ({
-      moreOptionsEnabled: !moreOptionsEnabled
+    this.setState(({ blur }) => ({
+      blur: !blur
     }));
   }
 
   render() {
     const { navigation } = this.props;
-    const {
-      album,
-      downloaded,
-      scrollY,
-      song,
-      title,
-      moreOptionsEnabled
-    } = this.state;
+    const { album, downloaded, scrollY, song, title, blur } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -133,10 +126,10 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
-        {moreOptionsEnabled ? (
+        {blur ? (
           <BlurView
             tint="dark"
-            intensity={90}
+            intensity={95}
             style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
           />
         ) : null}
