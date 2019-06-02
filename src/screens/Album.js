@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
+import { BlurView } from 'expo';
 import { colors, device, fonts, gStyle, images } from '../constants';
 
 // components
@@ -30,11 +31,13 @@ class Album extends React.Component {
       downloaded: false,
       scrollY: new Animated.Value(0),
       song: null,
-      title: null
+      title: null,
+      moreOptionsEnabled: false
     };
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
     this.changeSong = this.changeSong.bind(this);
+    this.toggleBlur = this.toggleBlur.bind(this);
   }
 
   componentDidMount() {
@@ -90,9 +93,22 @@ class Album extends React.Component {
     });
   }
 
+  toggleBlur() {
+    this.setState(({ moreOptionsEnabled }) => ({
+      moreOptionsEnabled: !moreOptionsEnabled
+    }));
+  }
+
   render() {
     const { navigation } = this.props;
-    const { album, downloaded, scrollY, song, title } = this.state;
+    const {
+      album,
+      downloaded,
+      scrollY,
+      song,
+      title,
+      moreOptionsEnabled
+    } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -117,6 +133,13 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
+        {moreOptionsEnabled ? (
+          <BlurView
+            tint="dark"
+            intensity={90}
+            style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
+          />
+        ) : null}
         <View style={styles.containerHeader}>
           <Animated.View
             style={[styles.headerLinear, { opacity: opacityHeading }]}
@@ -133,7 +156,12 @@ class Album extends React.Component {
             </Animated.View>
             <TouchIcon
               icon={<Feather color={colors.white} name="more-horizontal" />}
-              onPress={() => null}
+              onPress={() => {
+                this.toggleBlur();
+                navigation.navigate('ModalMoreOptions', {
+                  toggleBlur: this.toggleBlur
+                });
+              }}
             />
           </View>
         </View>
