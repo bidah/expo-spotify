@@ -21,12 +21,6 @@ const StackNavigator = createStackNavigator(
       navigationOptions: {
         gesturesEnabled: false
       }
-    },
-    ModalMoreOptions: {
-      screen: ModalMoreOptions,
-      navigationOptions: {
-        gesturesEnabled: false
-      }
     }
   },
   {
