@@ -5,6 +5,7 @@ import TabNavigation from './TabNavigation';
 
 // grab screens
 import ModalMusicPlayer from '../screens/ModalMusicPlayer';
+import ModalMoreOptions from '../screens/ModalMoreOptions';
 
 // grab modal routes (dynamic transitions)
 import ModalRoutes from './ModalRoutes';
@@ -20,9 +21,16 @@ const StackNavigator = createStackNavigator(
       navigationOptions: {
         gesturesEnabled: false
       }
+    },
+    ModalMoreOptions: {
+      screen: ModalMoreOptions,
+      navigationOptions: {
+        gesturesEnabled: false
+      }
     }
   },
   {
+    transparentCard: true,
     headerMode: 'none',
     initialRouteName: 'TabNavigation',
     transitionConfig: ModalRoutes
