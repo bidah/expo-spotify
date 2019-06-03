@@ -13,7 +13,10 @@ import { device, gStyle } from '../constants';
 import yourLibrary from '../mockdata/menuYourLibrary';
 import LineItemCategory from '../components/LineItemCategory';
 
-export default function ModalMore({ navigation }) {
+export default function ModalMore({
+  navigation,
+  screenProps: { setToggleTabBar }
+}) {
   return (
     <React.Fragment>
       <View
@@ -28,7 +31,7 @@ export default function ModalMore({ navigation }) {
           <TouchableWithoutFeedback
             onPress={() => {
               navigation.goBack();
-              navigation.getParam('toggleBlur')();
+              setToggleTabBar();
             }}
           >
             <View
@@ -36,7 +39,7 @@ export default function ModalMore({ navigation }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: 50,
-                backgroundColor: 'black'
+                backgroundColor: '#121212'
               }}
             >
               <Text

@@ -31,8 +31,7 @@ class Album extends React.Component {
       downloaded: false,
       scrollY: new Animated.Value(0),
       song: null,
-      title: null,
-      blur: false
+      title: null
     };
 
     this.toggleDownloaded = this.toggleDownloaded.bind(this);
@@ -87,8 +86,9 @@ class Album extends React.Component {
   }
 
   changeSong(songData) {
-    const { screenProps } = this.props;
-    const { changeSong } = screenProps;
+    const {
+      screenProps: { changeSong }
+    } = this.props;
 
     changeSong(songData);
 
@@ -98,16 +98,19 @@ class Album extends React.Component {
   }
 
   toggleBlur() {
-    this.props.screenProps.toggleTabBar();
+    const {
+      screenProps: { setToggleTabBar }
+    } = this.props;
 
-    this.setState(({ blur }) => ({
-      blur: !blur
-    }));
+    setToggleTabBar();
   }
 
   render() {
-    const { navigation } = this.props;
-    const { album, downloaded, scrollY, song, title, blur } = this.state;
+    const {
+      navigation,
+      screenProps: { toggleTabBarState: blur, setToggleTabBar }
+    } = this.props;
+    const { album, downloaded, scrollY, song, title } = this.state;
 
     // album data not set?
     if (album === null) {
@@ -156,9 +159,9 @@ class Album extends React.Component {
             <TouchIcon
               icon={<Feather color={colors.white} name="more-horizontal" />}
               onPress={() => {
-                this.toggleBlur();
+                setToggleTabBar();
                 navigation.navigate('ModalMoreOptions', {
-                  toggleBlur: this.toggleBlur
+                  toggleBlur: setToggleTabBar
                 });
               }}
             />

@@ -23,10 +23,10 @@ export default class App extends React.Component {
     };
 
     this.changeSong = this.changeSong.bind(this);
-    this.toggleTabBar = this.toggleTabBar.bind(this);
+    this.setToggleTabBar = this.setToggleTabBar.bind(this);
   }
 
-  toggleTabBar() {
+  setToggleTabBar() {
     this.setState(({ toggleTabBar }) => ({
       toggleTabBar: !toggleTabBar
     }));
@@ -58,8 +58,8 @@ export default class App extends React.Component {
           screenProps={{
             currentSongData,
             changeSong: this.changeSong,
-            toggleTabBar: this.toggleTabBar,
-            toggleTabBarValue: toggleTabBar
+            setToggleTabBar: this.setToggleTabBar,
+            toggleTabBarState: toggleTabBar
           }}
         />
       </React.Fragment>
