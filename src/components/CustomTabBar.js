@@ -9,12 +9,14 @@ const CustomTabBar = props => {
   const { navigation, screenProps } = props;
   const { currentSongData } = screenProps;
 
-  return (
+  const tab = !screenProps.toggleTabBarValue ? (
     <React.Fragment>
       <BarMusicPlayer navigation={navigation} song={currentSongData} />
       <BottomTabBar {...props} />
     </React.Fragment>
-  );
+  ) : null;
+
+  return tab;
 };
 
 CustomTabBar.propTypes = {

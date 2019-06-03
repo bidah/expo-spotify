@@ -98,6 +98,8 @@ class Album extends React.Component {
   }
 
   toggleBlur() {
+    this.props.screenProps.toggleTabBar();
+
     this.setState(({ blur }) => ({
       blur: !blur
     }));

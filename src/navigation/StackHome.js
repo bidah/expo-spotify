@@ -14,48 +14,26 @@ Icon.propTypes = {
   focused: PropTypes.bool.isRequired
 };
 
-const ModalStack = createStackNavigator(
-  {
-    Album,
-    ModalMoreOptions
-  },
-  {
-    headerMode: 'none',
-    initialRouteName: 'Album',
-    transparentCard: true,
-    mode: 'modal'
-  }
-);
+// const ModalStack = createStackNavigator(
+//   {
+//     Album,
+//     ModalMoreOptions
+//   },
+//   {
+//     headerMode: 'none',
+//     initialRouteName: 'Album',
+//     transparentCard: true,
+//     mode: 'modal'
+//   }
+// );
 
 export default createStackNavigator(
   {
     Home,
-    ModalStack
+    Album
   },
   {
     headerMode: 'none',
-    initialRouteName: 'Home',
-    transparentCard: true,
-    navigationOptions: ({
-      navigation,
-      navigation: {
-        state: { index, routes }
-      }
-    }) => {
-      const currentRoute = routes[index].routeName;
-      const ModalStack = routes[index];
-      if (currentRoute === 'ModalStack') {
-        if (
-          ModalStack.routes[ModalStack.index].routeName === 'ModalMoreOptions'
-        ) {
-          return {
-            tabBarVisible: false
-          };
-        }
-      }
-      return {
-        tabBarVisible: true
-      };
-    }
+    initialRouteName: 'Home'
   }
 );

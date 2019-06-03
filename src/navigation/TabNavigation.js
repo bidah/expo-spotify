@@ -1,5 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
+import { BlurView } from 'expo';
+import { StyleSheet } from 'react-native';
 import { colors } from '../constants';
 
 // grabs stacks
@@ -10,7 +12,7 @@ import StackLibrary from './StackLibrary';
 // components
 import CustomTabBar from '../components/CustomTabBar';
 
-export default createBottomTabNavigator(
+const BottomTabNavigator = createBottomTabNavigator(
   {
     StackHome,
     StackSearch,
@@ -29,3 +31,5 @@ export default createBottomTabNavigator(
     }
   }
 );
+
+export default BottomTabNavigator;
