@@ -108,7 +108,7 @@ class Album extends React.Component {
   render() {
     const {
       navigation,
-      screenProps: { toggleTabBarState: blur, setToggleTabBar }
+      screenProps: { toggleTabBarState, setToggleTabBar }
     } = this.props;
     const { album, downloaded, scrollY, song, title } = this.state;
 
@@ -135,13 +135,14 @@ class Album extends React.Component {
 
     return (
       <View style={gStyle.container}>
-        {blur ? (
+        {toggleTabBarState ? (
           <BlurView
             tint="dark"
             intensity={95}
             style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
           />
         ) : null}
+
         <View style={styles.containerHeader}>
           <Animated.View
             style={[styles.headerLinear, { opacity: opacityHeading }]}

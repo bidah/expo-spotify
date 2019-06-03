@@ -27,7 +27,7 @@ export default function ModalMore({
           zIndex: 50
         }}
       >
-        <SafeAreaView>
+        <SafeAreaView style={{ backgroundColor: '#161616' }}>
           <TouchableWithoutFeedback
             onPress={() => {
               navigation.goBack();
@@ -38,8 +38,7 @@ export default function ModalMore({
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: 50,
-                backgroundColor: '#121212'
+                height: 50
               }}
             >
               <Text
