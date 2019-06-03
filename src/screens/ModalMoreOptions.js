@@ -62,10 +62,7 @@ export default function ModalMore({
         showsVerticalScrollIndicator={false}
         style={{ ...gStyle.container, backgroundColor: 'none' }}
       >
-        <View style={styles.containerFixed}>
-          <View style={styles.containerLinear}>
-            <LinearGradient fill={album.backgroundColor} />
-          </View>
+        <View style={styles.container}>
           <View style={styles.containerImage}>
             <Image source={images[album.image]} style={styles.image} />
           </View>
@@ -78,7 +75,6 @@ export default function ModalMore({
         </View>
 
         <FlatList
-          contentContainerStyle={styles.containerFlatlist}
           data={yourLibrary}
           keyExtractor={itemObj => itemObj.id.toString()}
           renderItem={itemObj => {
@@ -100,9 +96,6 @@ export default function ModalMore({
 }
 
 const styles = StyleSheet.create({
-  containerFlatlist: {
-    marginTop: device.iPhoneX ? 88 : 64
-  },
   containerHeader: {
     height: 89,
     position: 'absolute',
@@ -133,10 +126,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: device.width - 100
   },
-  containerFixed: {
+  container: {
     alignItems: 'center',
     paddingTop: device.iPhoneX ? 94 : 50,
-    position: 'absolute',
     width: '100%'
   },
   containerLinear: {
