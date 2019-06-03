@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import { Feather } from '@expo/vector-icons';
 import { colors, fonts, gStyle } from '../constants';
 
-const LineItemCategory = ({ icon, onPress, title }) => (
+const LineItemCategory = ({
+  icon,
+  onPress,
+  title,
+  disableRightSide = false
+}) => (
   <TouchableOpacity
     activeOpacity={gStyle.activeOpacity}
     onPress={onPress}
@@ -14,9 +19,12 @@ const LineItemCategory = ({ icon, onPress, title }) => (
       <Feather color={colors.greyInactive} name={icon} size={24} />
       <Text style={styles.title}>{title}</Text>
     </View>
-    <View style={styles.containerRight}>
-      <Feather color={colors.greyInactive} name="chevron-right" size={20} />
-    </View>
+
+    {disableRightSide ? null : (
+      <View style={styles.containerRight}>
+        <Feather color={colors.greyInactive} name="chevron-right" size={20} />
+      </View>
+    )}
   </TouchableOpacity>
 );
 
@@ -24,7 +32,8 @@ LineItemCategory.propTypes = {
   // required
   icon: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  disableRightSide: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({

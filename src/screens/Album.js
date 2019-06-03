@@ -161,7 +161,9 @@ class Album extends React.Component {
               icon={<Feather color={colors.white} name="more-horizontal" />}
               onPress={() => {
                 setToggleTabBar();
-                navigation.navigate('ModalMoreOptions');
+                navigation.navigate('ModalMoreOptions', {
+                  album
+                });
               }}
             />
           </View>
