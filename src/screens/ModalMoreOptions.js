@@ -13,7 +13,6 @@ import {
 import { device, gStyle, images, colors } from '../constants';
 import yourLibrary from '../mockdata/menuYourLibrary';
 import LineItemCategory from '../components/LineItemCategory';
-import LinearGradient from '../components/LinearGradient';
 
 export default function ModalMore({
   navigation,
@@ -81,12 +80,14 @@ export default function ModalMore({
             const { item } = itemObj;
 
             return (
-              <LineItemCategory
-                icon={item.icon}
-                onPress={() => null}
-                title={item.title}
-                disableRightSide
-              />
+              <View style={{ marginBottom: 22 }}>
+                <LineItemCategory
+                  icon={item.icon}
+                  onPress={() => null}
+                  title={item.title}
+                  disableRightSide
+                />
+              </View>
             );
           }}
         />
