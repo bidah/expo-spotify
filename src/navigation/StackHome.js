@@ -5,7 +5,6 @@ import { createStackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
 import Album from '../screens/Album';
 import SvgTabHome from '../components/icons/Svg.TabHome';
-import ModalMoreOptions from '../screens/ModalMoreOptions';
 
 const Icon = ({ focused }) => <SvgTabHome active={focused} />;
 

@@ -1,7 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import { BlurView } from 'expo';
-import { StyleSheet } from 'react-native';
 import { colors } from '../constants';
 
 // grabs stacks

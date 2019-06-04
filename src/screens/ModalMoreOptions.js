@@ -10,7 +10,7 @@ import {
   Image
 } from 'react-native';
 
-import { device, gStyle, images, colors } from '../constants';
+import { device, gStyle, images, colors, fonts } from '../constants';
 import yourLibrary from '../mockdata/menuYourLibrary';
 import LineItemCategory from '../components/LineItemCategory';
 
