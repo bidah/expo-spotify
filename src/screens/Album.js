@@ -138,7 +138,7 @@ class Album extends React.Component {
         {toggleTabBarState ? (
           <BlurView
             tint="dark"
-            intensity={95}
+            intensity={99}
             style={{ zIndex: 101, ...StyleSheet.absoluteFill }}
           />
         ) : null}
