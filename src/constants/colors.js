@@ -5,6 +5,7 @@ export default {
   black50: 'rgba(0, 0, 0, 0.5)',
   black70: 'rgba(0, 0, 0, 0.7)',
   white: '#fff',
+  blackBlur: '#161616',
 
   // spotify colors
   blackBg: '#121212',

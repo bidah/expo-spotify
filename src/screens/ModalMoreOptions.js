@@ -30,7 +30,7 @@ export default function ModalMore({
           zIndex: 50
         }}
       >
-        <SafeAreaView style={{ backgroundColor: colors.blackBg }}>
+        <SafeAreaView style={{ backgroundColor: colors.blackBlur }}>
           <TouchableWithoutFeedback
             onPress={() => {
               navigation.goBack();
@@ -59,8 +59,8 @@ export default function ModalMore({
 
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={gStyle.flex1}
-        contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
+        style={[gStyle.container, { backgroundColor: 'transparent' }]}
+        contentContainerStyle={{ flex: 1, paddingBottom: 80 }}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>
@@ -100,8 +100,8 @@ export default function ModalMore({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     paddingTop: device.iPhoneX ? 94 : 50,
+    alignItems: 'center',
     width: '100%'
   },
   containerImage: {
