@@ -30,7 +30,7 @@ export default function ModalMore({
           zIndex: 50
         }}
       >
-        <SafeAreaView style={{ backgroundColor: '#161616' }}>
+        <SafeAreaView style={{ backgroundColor: colors.blackBg }}>
           <TouchableWithoutFeedback
             onPress={() => {
               navigation.goBack();
@@ -60,7 +60,7 @@ export default function ModalMore({
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={gStyle.flex1}
-        contentContainerStyle={gStyle.pB80}
+        contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>
