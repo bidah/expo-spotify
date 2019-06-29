@@ -13,19 +13,6 @@ Icon.propTypes = {
   focused: PropTypes.bool.isRequired
 };
 
-// const ModalStack = createStackNavigator(
-//   {
-//     Album,
-//     ModalMoreOptions
-//   },
-//   {
-//     headerMode: 'none',
-//     initialRouteName: 'Album',
-//     transparentCard: true,
-//     mode: 'modal'
-//   }
-// );
-
 export default createStackNavigator(
   {
     Home,
@@ -33,6 +20,10 @@ export default createStackNavigator(
   },
   {
     headerMode: 'none',
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: Icon
+    }
   }
 );
