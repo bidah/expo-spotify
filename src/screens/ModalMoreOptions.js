@@ -75,7 +75,7 @@ export default function ModalMoreOptions({
             const { item } = itemObj;
 
             return (
-              <View style={{ marginBottom: 22 }}>
+              <View style={gStyle.mB22}>
                 <LineItemCategory
                   icon={item.icon}
                   onPress={() => null}

@@ -52,6 +52,7 @@ export default {
   spacer128: { height: 128 },
 
   mB8: { marginBottom: 8 },
+  mB22: { marginBottom: 24 },
   mR8: { marginRight: 8 },
   mR16: { marginRight: 16 },
   mR24: { marginRight: 24 },
