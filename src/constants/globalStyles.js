@@ -65,6 +65,7 @@ export default {
   p8: { padding: 8 },
   p16: { padding: 16 },
   p24: { padding: 24 },
+  pB80: { padding: 80 },
 
   pH4: { paddingHorizontal: 4 },
   pH8: { paddingHorizontal: 8 },

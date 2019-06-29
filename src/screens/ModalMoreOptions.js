@@ -59,7 +59,8 @@ export default function ModalMore({
 
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{ ...gStyle.container, backgroundColor: 'none' }}
+        style={gStyle.flex1}
+        contentContainerStyle={gStyle.pB80}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>
@@ -98,44 +99,9 @@ export default function ModalMore({
 }
 
 const styles = StyleSheet.create({
-  containerHeader: {
-    height: 89,
-    position: 'absolute',
-    top: 0,
-    width: '100%',
-    zIndex: 100
-  },
-  headerLinear: {
-    height: 89,
-    width: '100%'
-  },
-  header: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 24,
-    paddingTop: device.iPhoneX ? 48 : 24,
-    position: 'absolute',
-    top: 0,
-    width: '100%'
-  },
-  headerTitle: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
-    paddingHorizontal: 8,
-    marginTop: 2,
-    textAlign: 'center',
-    width: device.width - 100
-  },
   container: {
     alignItems: 'center',
     paddingTop: device.iPhoneX ? 94 : 50,
-    width: '100%'
-  },
-  containerLinear: {
-    position: 'absolute',
-    top: 0,
     width: '100%'
   },
   containerImage: {
@@ -162,54 +128,5 @@ const styles = StyleSheet.create({
     fontFamily: fonts.spotifyRegular,
     fontSize: 12,
     marginBottom: 48
-  },
-  containerScroll: {
-    paddingTop: 89
-  },
-  containerSticky: {
-    marginTop: device.iPhoneX ? 238 : 194
-  },
-  containerShuffle: {
-    alignItems: 'center',
-    height: 50,
-    shadowColor: colors.blackBg,
-    shadowOffset: { height: -10, width: 0 },
-    shadowOpacity: 0.2,
-    shadowRadius: 20
-  },
-  containerStickyLinear: {
-    top: 0,
-    position: 'absolute',
-    width: '100%'
-  },
-  btn: {
-    backgroundColor: colors.brandPrimary,
-    borderRadius: 25,
-    height: 50,
-    width: 220
-  },
-  btnText: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 16,
-    letterSpacing: 1,
-    textTransform: 'uppercase'
-  },
-  containerSongs: {
-    alignItems: 'center',
-    backgroundColor: colors.blackBg,
-    minHeight: 540
-  },
-  row: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 16,
-    width: '100%'
-  },
-  downloadText: {
-    color: colors.white,
-    fontFamily: fonts.spotifyBold,
-    fontSize: 18
   }
 });
