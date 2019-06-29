@@ -10,11 +10,12 @@ import {
   Image
 } from 'react-native';
 
+import PropTypes from 'prop-types';
 import { device, gStyle, images, colors, fonts } from '../constants';
 import moreOptions from '../mockdata/menuMoreOptions';
 import LineItemCategory from '../components/LineItemCategory';
 
-export default function ModalMore({
+export default function ModalMoreOptions({
   navigation,
   screenProps: { setToggleTabBar }
 }) {
@@ -90,6 +91,12 @@ export default function ModalMore({
     </React.Fragment>
   );
 }
+
+ModalMoreOptions.propTypes = {
+  // required
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.object.isRequired
+};
 
 const styles = StyleSheet.create({
   container: {
