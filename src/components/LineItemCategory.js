@@ -28,12 +28,18 @@ const LineItemCategory = ({
   </TouchableOpacity>
 );
 
+LineItemCategory.defaultProps = {
+  disableRightSide: false
+};
+
 LineItemCategory.propTypes = {
   // required
   icon: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  disableRightSide: PropTypes.string.isRequired
+
+  // optional
+  disableRightSide: PropTypes.string
 };
 
 const styles = StyleSheet.create({
