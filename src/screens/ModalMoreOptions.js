@@ -22,14 +22,7 @@ export default function ModalMore({
 
   return (
     <React.Fragment>
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100%',
-          zIndex: 50
-        }}
-      >
+      <View style={gStyle.containerAbsolute}>
         <SafeAreaView style={{ backgroundColor: colors.blackBlur }}>
           <TouchableWithoutFeedback
             onPress={() => {

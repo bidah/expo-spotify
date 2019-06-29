@@ -6,6 +6,12 @@ export default {
     backgroundColor: colors.blackBg,
     flex: 1
   },
+  containerAbsolute: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    zIndex: 50
+  },
   flexCenter: {
     alignItems: 'center',
     justifyContent: 'center'
