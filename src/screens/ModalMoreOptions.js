@@ -23,33 +23,23 @@ export default function ModalMoreOptions({
 
   return (
     <React.Fragment>
-      <View style={gStyle.containerAbsolute}>
-        <SafeAreaView style={{ backgroundColor: colors.blackBlur }}>
-          <TouchableWithoutFeedback
-            onPress={() => {
-              navigation.goBack();
-              setToggleTabBar();
-            }}
-          >
-            <View
-              style={{
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: 50
-              }}
-            >
-              <Text
-                style={{
-                  color: 'white',
-                  fontSize: 18
-                }}
-              >
-                Cancel
-              </Text>
-            </View>
-          </TouchableWithoutFeedback>
-        </SafeAreaView>
-      </View>
+      <SafeAreaView
+        style={{
+          ...gStyle.containerAbsolute,
+          backgroundColor: colors.blackBlur
+        }}
+      >
+        <TouchableWithoutFeedback
+          onPress={() => {
+            navigation.goBack();
+            setToggleTabBar();
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>Cancel</Text>
+          </View>
+        </TouchableWithoutFeedback>
+      </SafeAreaView>
 
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -99,6 +89,15 @@ ModalMoreOptions.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  buttonContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50
+  },
+  buttonText: {
+    color: colors.white,
+    fontSize: 18
+  },
   container: {
     paddingTop: device.iPhoneX ? 94 : 50,
     alignItems: 'center',
