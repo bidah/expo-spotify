@@ -90,9 +90,8 @@ ModalMoreOptions.propTypes = {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 50
+    ...gStyle.flexCenter,
+    ...gStyle.spacer48
   },
   buttonText: {
     color: colors.white,
@@ -100,8 +99,7 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingTop: device.iPhoneX ? 94 : 50,
-    alignItems: 'center',
-    width: '100%'
+    alignItems: 'center'
   },
   containerImage: {
     shadowColor: colors.black,
