@@ -54,7 +54,7 @@ export default function ModalMoreOptions({
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={[gStyle.container, { backgroundColor: 'transparent' }]}
-        contentContainerStyle={{ flex: 1, paddingBottom: 80 }}
+        contentContainerStyle={[gStyle.flex1, gStyle.pB80]}
       >
         <View style={styles.container}>
           <View style={styles.containerImage}>

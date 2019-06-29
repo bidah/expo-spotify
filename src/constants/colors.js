@@ -9,6 +9,7 @@ export default {
 
   // spotify colors
   blackBg: '#121212',
+  transparent: 'transparent',
   brandPrimary: '#57b660',
   grey: '#282828',
   greyInactive: '#b3b3b3',
