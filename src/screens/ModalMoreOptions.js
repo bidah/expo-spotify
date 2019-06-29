@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { device, gStyle, images, colors, fonts } from '../constants';
-import yourLibrary from '../mockdata/menuYourLibrary';
+import moreOptions from '../mockdata/menuMoreOptions';
 import LineItemCategory from '../components/LineItemCategory';
 
 export default function ModalMore({
@@ -74,7 +74,7 @@ export default function ModalMore({
         </View>
 
         <FlatList
-          data={yourLibrary}
+          data={moreOptions}
           keyExtractor={itemObj => itemObj.id.toString()}
           renderItem={itemObj => {
             const { item } = itemObj;
@@ -86,6 +86,7 @@ export default function ModalMore({
                   onPress={() => null}
                   title={item.title}
                   disableRightSide
+                  iconLibrary={item.lib}
                 />
               </View>
             );

@@ -1,0 +1,29 @@
+[
+  { "id": 1, "icon": "heart-o", "title": "Like", "lib": "FontAwesome" },
+  {
+    "id": 1,
+    "icon": "artist",
+    "title": "View artist",
+    "lib": "MaterialCommunityIcons"
+  },
+  { "id": 1, "icon": "share-alternative", "title": "Share", "lib": "Entypo" },
+  {
+    "id": 1,
+    "icon": "heart-o",
+    "title": "Like all songs",
+    "lib": "FontAwesome"
+  },
+  {
+    "id": 1,
+    "icon": "queue-music",
+    "title": "Add to playlist",
+    "lib": "MaterialIcons"
+  },
+  {
+    "id": 1,
+    "icon": "playlist-add",
+    "title": "Add to queue",
+    "lib": "MaterialIcons"
+  },
+  { "id": 1, "icon": "radio", "title": "Go to radio", "lib": "Feather" }
+]
